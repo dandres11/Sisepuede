@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Sisepuede.com</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+   
+  </head>
+  <body>
+    
+      
+    <nav class="navbar navbar-default fondo-azul texto-blanco">
+        <div class="container-fluid texto-blanco">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header texto-blanco">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sisepuede.com</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPRESA <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="vistas/resgistrar_empresa.html">REGISRARSE</a></li>
+                    <li><a href="vistas/iniciar_empresa.html">INGRESAR</a></li>
+                                  
+                </ul>
+                </li>
+                
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPLEADO <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">REGISTRARSE</a></li>
+                    <li><a href="#">INGRESAR</a></li>
+                                    
+                </ul>
+                </li>
+                
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>            
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
+    <!--Fin menu -->
+    <!--Inicia contenido de la página -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <center>
+                    <h1>Nunca fue tan facil conseguir personal y empleo por la web</h1>
+                    <img class="logo" src="img/logo.png">
+                
+                </center>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row espacio40">
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                
+                <center>
+                    <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+                <br><br>
+                    <a href="vistas/tipo_usuario.html"><button type="button" class="btn btn-danger">Entrar con Google</button></a>
+                </center>    
+            </div>
+     </div>
+    </div>
+    
+    
+    <br><br><br><br>
+    <!--Fin contenido de la página -->
+    <footer>
+        
+        <button class="btn btn-warning full-w" onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook<br> (with errcallback)</button>
+        
+        <button class="btn btn-warning full-w" onclick="window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')">message, subject,<br> image and link</button>
+        
+        <div class="row">
+            <div class="col-xs-6">
+                <img class="center-block" src="img/iconos/facebook.png">
+            </div>
+            <div class="col-xs-6">
+                <img class="center-block" src="img/iconos/instagram.png">
+            </div>
+        </div>
+    </footer>
+      
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    
+    <script src="./js/respond.min.js"></script>
+
+	<script src="./js/jquery.smartscroll.js"></script>
+
+	<script src="./js/script.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$(document).smartscroll({fullscreen: false, controls: true});
+		});
+	</script>
+    
+  </body>
+</html>

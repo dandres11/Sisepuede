@@ -1,0 +1,166 @@
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+
+body {
+	font-family: 'Maven Pro', sans-serif;
+}
+
+p {
+	font-size: 1.4em;
+}
+
+.full-w {
+	width: 100%;
+}
+
+.form-control {
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555555;
+    display: block;
+    font-size: 23px;
+    height: 56px;
+    line-height: 1.42857;
+    padding: 0 49px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+.btn {
+	font-size: 29px;
+}
+
+.nopadding {
+	padding: 0 !important;
+}
+
+.home {
+	/*margin-top: 25%;*/
+	position: absolute;
+	top: 10%;
+	left: 5%;
+	font-family: 'Fredericka the Great', cursive;
+}
+
+.home h1 {
+  letter-spacing:0.1em;
+  margin-bottom:0;
+  margin-top:0;
+  font-size:6em;
+  line-height:1.1em;
+  color: #FFFFFF;
+}
+
+.home h2 {
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 0 10px;
+	color: #24A0BA;
+}
+
+.section {
+	padding: 120px 0;
+}
+
+.sharix:link,
+.sharix:visited,
+.sharix:focus {
+	height: 48px;
+	background-color: #333333;
+	display: inline-block;
+	padding-right: 20px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.sharix > img {
+	padding-right: 10px
+}
+
+.sharix:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #222222;
+}
+
+#one {
+	background: url(../img/layout/bg01.jpg) no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.cover{
+	display: none;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 93%;
+	height: 88%;
+	margin: 3%;
+	border: 4px solid #FFFFFF;
+	opacity: .8;
+	background-color: transparent;
+	z-index: 999;
+}
+
+#page2 {
+	
+}
+
+#page3 {
+	
+}
+
+#page4 {
+	
+}
+
+#page5 {
+	
+}
+
+.bg1 {
+	background-color: #828180;
+}
+
+.bg2 {
+	background-color: #6B595A;
+	color: #FFFFFF;
+}
+
+.bg3 {
+	background-color: #D4E5DB;
+}
+
+.bg4 {
+	background-color: #A7AEAA;
+}
+
+.bg5 {
+	background-color: #3A333B;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) { 
+	.home h1 {
+		font-size:3em;
+	}
+
+	.form-control {
+		font-size: 16px;
+		height: 45px;
+		line-height: 1.42857;
+		padding: 0 20px;
+		width: 70%;
+		float: left;
+	}
+
+	.btn {
+		font-size: 22px;
+	}
+}

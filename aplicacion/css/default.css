@@ -1,0 +1,111 @@
+/*!
+ * jQuery smartscroll plugin css main theme for control arrows and back to top button
+ * Original author: @responsivewemmobile
+ * Version 1.0 2013-01-16
+ * Further changes, comments: @responsivewemmobile.com
+ */
+
+nav.smartscroll-nav {
+    position: fixed;
+    top: 2%;
+    right: 1%;
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+nav.smartscroll-nav > ul > li {
+    float: left;
+    list-style: none;
+    margin-right: 2px;
+}
+
+nav.smartscroll-nav > ul > li > a {
+    display: block;
+    padding: 15px;
+    background-color: #4B3D4E;
+    color: #24A0BA;
+    font-size: 1.2em;
+    font-family: 'Fredericka the Great', cursive;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    border: 1px solid #FFFFFF;
+}
+
+nav.smartscroll-nav > ul > li > a:hover,
+nav.smartscroll-nav > ul > li.active > a {
+    color: #FFFFFF;
+    background-color: #24A0BA;
+    text-decoration: none;
+}
+
+
+/* NAVIGATION CONTROLS */
+nav.smartscroll-controls {
+	position: fixed;
+	top: 50%;
+	left: 0;
+}
+
+
+nav.smartscroll-controls > a {
+	display: block;
+	margin: 15px;
+}
+
+nav.smartscroll-controls > a.prev {
+	border-color: #333333;
+    border-style: solid none none solid;
+    border-width: 2px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+nav.smartscroll-controls > a.next {
+    border-color: #333333;
+    border-style: none solid solid none;
+    border-width: 2px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* BACK TO TOP ANCHOR */
+a.smartscroll-totop {
+	position: fixed;
+	bottom: 15px;
+	right: 25px;
+	border-color: #333333;
+    border-style: solid none none solid;
+    border-width: 2px;
+    width: 30px;
+    height: 30px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) { 
+    nav.smartscroll-nav > ul > li > a {
+        display: block;
+        padding: 5px;
+        background-color: #4B3D4E;
+        color: #24A0BA;
+        font-size: 1em;
+        font-family: 'Fredericka the Great', cursive;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        border: 1px solid #FFFFFF;
+    } 
+}

@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sisepuede.com</title>
+    <title>Sisepuede</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
-
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel="stylesheet" type="text/css">   
+    <script src="../js/angular.min.js"></script>
    
   </head>
-  <body>
+  <body ng-app>
     <!--Inicia menu -->
     <nav class="navbar navbar-default fondo-azul texto-blanco">
         <div class="container-fluid texto-blanco">
+            
+            
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header texto-blanco">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -25,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.html">Sisepuede.com</a>
+            <a class="navbar-brand" href="../index.html">Sisepuede</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,8 +38,8 @@
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPRESA <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="vistas/resgistrar_empresa.html">REGISRARSE</a></li>
-                    <li><a href="vistas/iniciar_empresa.html">INGRESAR</a></li>
+                    <li><a href="resgistrar_empresa.html">REGISRARSE</a></li>
+                    <li><a href="iniciar_empresa.html">INGRESAR</a></li>
                                   
                 </ul>
                 </li>
@@ -51,76 +54,115 @@
                 </li>
                 
             </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>            
+                     
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         </nav>
       
-        <h1> SisePuede.com </h1>
-      <center>
-      <h3 class="tex-center">Empresa</h3>
-      </center>
-     <form>
-         
-   <form>
-       
-<div class="form-group">
-    <label for="exampleInputEmail1">Nombres</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        <h1> Sisepuede </h1>
+      
+        <center>
+      <h3 class="tex-center">Empleado</h3>
+        </center>
+      
+        
+        <h1> Formulario de registro  </h1>
+           
+           <div>
+               <form role="form" name="forma">
+   <div class="form-group" ng-class="{'has-error': forma.nombreE1.$invalid, 'has-success': forma.nombreE1.$valid}">
+      <label for="inputNombreE1">Primer nombre</label>
+      <input id="input" type="text" class="form-control" placeholder="Primer nombre" name="nombreE1" ng-model="usuario.nombreE1" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.nombreE1.$error.required">Campo obligatorio</p> 
+                   
+                   
+                   
+    <div>
+               <form role="form" name="forma">
+   <div class="form-group" ng-class="{'has-error': forma.nombreE2.$invalid, 'has-success': forma.nombreE2.$valid}">
+      <label for="inputNombreE2">Segundo nombre</label>
+      <input id="input" type="text" class="form-control" placeholder="Segundo nombre" name="nombreE2" ng-model="usuario.nombreE2">
+    </div>
+   
+                   
+                   
+                   
+    <div class="form-group" ng-class="{'has-error': forma.apellidoE1.$invalid, 'has-success': forma.apellidoE1.$valid}">
+      <label for="inputApellidoE1">Primer apellido</label>
+      <input id="input" type="text" class="form-control" placeholder="Primer apellido" name="apellidoE1" ng-model="usuario.apellidoE1" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.apellidoE1.$error.required">Campo obligatorio</p>  
+                   
+    <div>
+               <form role="form" name="forma">
+   <div class="form-group" ng-class="{'has-error': forma.apellidoE2.$invalid, 'has-success': forma.apellidoE2.$valid}">
+      <label for="inputApellidoE2">Segundo apellido</label>
+      <input id="input" type="text" class="form-control" placeholder="Segundo apellido" name="apellidoE2" ng-model="usuario.apellidoE2" >
+    </div>
+                   
+                                 
+    <div class="form-group" ng-class="{'has-error': forma.emailU.$invalid, 'has-success': forma.emailU.$valid}">
+      <label for="inputEmail">Correo</label>
+      <input id="input" type="email" class="form-control" placeholder="Escriba un correo electronico valido" name="emailU" ng-model="usuario.emailU" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.emailU.$error.required">Campo obligatorio</p>        
+        <p class="help-block text-danger" ng-show="forma.emailU.$error.email  ">Email invalido</p> 
+                   
+     <div class="form-group" ng-class="{'has-error': forma.edad.$invalid, 'has-success': forma.edad.$valid}">
+      <label for="inputEdad">Edad</label>
+      <input id="input" type="number" class="form-control" placeholder="Escriba su edad" name="edad" ng-model="usuario.edad" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.edad.$error.required">Campo obligatorio</p>                
+                   
+                   
+                   
+    <div class="form-group" ng-class="{'has-error': forma.nombreUE.$invalid, 'has-success': forma.nombreUE.$valid}">
+      <label for="inputNombreUE">Nombre de usuario</label>
+      <input id="input" type="text" class="form-control" placeholder="Escriba un nombre de usuario" name="nombreUE" ng-model="usuario.nombreUE" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.nombreUE.$error.required">Campo obligatorio</p> 
+                   
+                   
+    <div class="form-group" ng-class="{'has-error': forma.passwordE.$invalid, 'has-success': forma.passwordE.$valid}">
+      <label for="inputPasswordE">Contraseña</label>
+      <input id="input" type="password" class="form-control" placeholder="Escriba una contraseña" name="passwordE" ng-model="usuario.passwordE" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.passwordE.$error.required">Campo obligatorio</p>        
+                   
+                   
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="aceptoU" ng-model="usuario.acepto" required> Acepta nuestras condiciones .
+      </label>
+    </div>
+                   
+        
+           
+        <center>           
+    <button class="btn btn-success tex-center" ng-disabled="forma.$invalid">Registrarme</button>
+            
+        </center>
+  </form>
   </div>
-       
-<div class="form-group">
-    <label for="exampleInputEmail1">Apellidos</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
- 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Correo</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">Anexar hoja de vida </label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Acepta <a href="#">Terminos y condiciones</a>
-    </label>
-  </div>
-  <center>
-       <button type="submit" class="btn btn-default">Registrarse</button>
-    </center>   
-</form>
  
            
     
                <a href="iniciar_empresa.html"><button type="button" class="btn btn-link">Regresar</button></a>
-       <footer>
-        <div class="row">
-            <div class="col-xs-6">
-                <img class="center-block" src="../img/iconos/facebook.png">
-            </div>
-            <div class="col-xs-6">
-                <img class="center-block" src="../img/iconos/instagram.png">
-            </div>
-           
-            </div>
-    
-    </footer> 
+       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/main.js"></script>
+     <script src="../js/bootstrap.js"></script>
+    
+    <script src="../js/respond.min.js"></script>
+
+	<script src="./js/jquery.smartscroll.js"></script>
+
+	<script src="../js/script.js"></script>
+	<script type="text/javascript" src="../js/cordova.js"></script>
+    
+    
+                 
   </body>
 </html>

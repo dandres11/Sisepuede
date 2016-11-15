@@ -5,17 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sisepuede.com</title>
+    <title>Sisepuede</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel="stylesheet" type="text/css"> 
+    <script src="../js/angular.min.js"></script> 
+   
       
       
-
+      
    
   </head>
-  <body>
+  <body ng-app>
+      
+      <script>
+      
+      $(document).ready(function(){
+          $("#enviar").click(function(){
+              
+              var nombre_empresa =$("#nombreE").val();
+              var correo_empresa =$("#emailE").val();
+              var nombre_usuarioE =$("#nomUE").val();
+              var contraseña_empresa =$("#clave").val();
+              
+              $.post("../php/registrar-empresa", {nombreE:nombre_empresa, emailE:correo_empresa, nomUE:nombre_usuarioE, password:contraseña_empresa}, function(datos){
+                  $("#resultado").html(datos);
+                  
+              });  
+              
+              });
+          
+       });   
+              
+     
+          
+        
+      
+      
+      
+      
+      </script>
     <!--Inicia menu -->
     <nav class="navbar navbar-default fondo-azul texto-blanco">
         <div class="container-fluid texto-blanco">
@@ -27,18 +58,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.html">Sisepuede.com</a>
+            <a class="navbar-brand" href="../index.html">Sisepuede</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
             
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPRESA <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="vistas/resgistrar_empresa.html">REGISRARSE</a></li>
-                    <li><a href="vistas/iniciar_empresa.html">INGRESAR</a></li>
+                    <li><a href="resgistrar_empresa.html">REGISRARSE</a></li>
+                    <li><a href="iniciar_empresa.html">INGRESAR</a></li>
                                   
                 </ul>
                 </li>
@@ -46,24 +77,19 @@
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EMPLEADO <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">REGISTRARSE</a></li>
-                    <li><a href="#">INGRESAR</a></li>
+                    <li><a href="registrar_empleado.html">REGISTRARSE</a></li>
+                    <li><a href="iniciar_empleado.html">INGRESAR</a></li>
                                     
                 </ul>
                 </li>
                 
             </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>            
+                    
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         </nav>
       
-        <h1> SisePuede.com </h1>
+        <h1> Sisepuede </h1>
       <center>
       <h3 class="tex-center">Empresa</h3>
       </center>
@@ -73,29 +99,50 @@
          <h1>Registra tu empresa </h1>
            
            <div>
-                <label class="col-sm-2 control-label">Nombre empresa</label>
+               <form role="form" name="forma">
+   <div class="form-group" ng-class="{'has-error': forma.nombreU.$invalid, 'has-success': forma.nombreU.$valid}">
+      <label for="inputNombreU">Nombre de la empresa</label>
+      <input id="nombreE" type="text" class="form-control" placeholder="Escriba el nombre de su empresa" name="nombreU" ng-model="usuario.nombreU" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.nombreU.$error.required">Campo obligatorio</p>  
+                   
+                   
+    <div class="form-group" ng-class="{'has-error': forma.emailU.$invalid, 'has-success': forma.emailU.$valid}">
+      <label for="inputEmail">Correo</label>
+      <input id="emailE" type="email" class="form-control" placeholder="Escriba un correo electronico valido" name="emailU" ng-model="usuario.emailU" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.emailU.$error.required">Campo obligatorio</p>        
+        <p class="help-block text-danger" ng-show="forma.emailU.$error.email  ">Email invalido</p> 
+                   
+    <div class="form-group" ng-class="{'has-error': forma.nombresU.$invalid, 'has-success': forma.nombresU.$valid}">
+      <label for="inputNombresU">Nombre de usuario</label>
+      <input id="nomUE" type="text" class="form-control" placeholder="Escriba un nombre de usuario" name="nombresU" ng-model="usuario.nombresU" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.nombresU.$error.required">Campo obligatorio</p> 
+                   
+                   
+    <div class="form-group" ng-class="{'has-error': forma.password.$invalid, 'has-success': forma.password.$valid}">
+      <label for="inputPassword">Contraseña</label>
+      <input id="clave" type="password" class="form-control" placeholder="Escriba una contraseña" name="password" ng-model="usuario.password" required>
+    </div>
+    <p class="help-block text-danger" ng-show="forma.password.$error.required">Campo obligatorio</p>        
+                   
+                   
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="aceptoU" ng-model="usuario.acepto" required> Acepta nuestras condiciones .
+      </label>
+    </div>
+           
+        <center>           
+    <button type="submit" name="enviar" id="enviar" onclick="enviar()" class="btn btn-success tex-center" ng-disabled="forma.$invalid">Registrar empresa</button>
+            
+        <div id="resultado"></div>           
+        </center>
+                   
+  </form>
+      
                
-            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre">
-               
-                <label  class="col-sm-2 control-label">Correo</label>
-               
-            <input class="form-control" type="email" id="correo" name="correo" placeholder="Correo">
-               
-               <label class="col-sm-2 control-label">Nombre de usuario</label>
-               
-            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Usuario">
-               
-               <label class="col-sm-2 control-label">Cree una contraseña</label>
-               
-            <input class="form-control" type="password" id="clave" name="clave" placeholder="Clave">
-               
-                <label>
-            <input type="checkbox"> Acepta terminos y condiciones 
-                </label>
-               
-             <center>
-                 <button class="btn btn-primary" onclick="registrar_empresa()" value="Registrarse">Registrar empresa </button>  
-               </center>
   </div>
   
          
@@ -103,9 +150,19 @@
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    <script src="../js/jquery.js"></script>
+      
     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js" ></script>  
     <script src="../js/bootstrap.js"></script>
-    <script src="../ajax.js"></script>
+    
+    <script src="../js/respond.min.js"></script>
+
+	<script src="./js/jquery.smartscroll.js"></script>
+
+	<script src="../js/script.js"></script>
+	<script type="text/javascript" src="../js/cordova.js"></script>
+    
+     
     
   </body>
 </html>

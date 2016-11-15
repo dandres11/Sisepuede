@@ -7,7 +7,7 @@
 
 <!-- versionCode is optional and Android only -->
 
-  <name>Sisepuede.com</name>
+  <name>Sisepuede</name>
 
   <description>
       app para buscar y plicar empleo
@@ -21,6 +21,7 @@
         <access origin="*" />
     
    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    
     
     
     </widget>
